@@ -1,3 +1,4 @@
+//If you want to replace all the existing class names with a new one:
 //To add a new class without removing existing ones:
   // document.body.classList.add("new-class");
 
