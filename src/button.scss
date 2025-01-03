@@ -1,0 +1,63 @@
+@use "./variable" as vars;
+@use "sass:map"; //Import New Map module for Using Map in sass(old is depreciated)
+@use "./src/UsingMaps" as newvars;
+
+//	Combine nesting with Sass features like & for referencing the parent selector.
+// & for referencing the parent selector.
+.button {
+  margin-top: 0.75rem;
+  color: white;
+  background: rgb(218, 218, 239);
+  border: vars.$base-border-thickness solid rgb(165, 180, 171);
+
+  &:hover {
+    background: darkblue;
+  }
+
+  &.active {
+    color: rgb(221, 45, 5);
+  }
+}
+.button3 {
+  background-color: map.get(newvars.$Rang, danger);
+}
+
+//Adding and updating the color in Sass
+//•	The map-get function requires two arguments:
+//	•	$map: The map you want to access.
+//•	$key: The specific key whose value you want to retrieve.(parameter 3 warning in Must to give for retrive the value)
+.button3 {
+  background-color: map.get(
+    map.merge(
+      newvars.$Rang,
+      (
+        warning: #f1c40f,
+      )
+    ),
+    warning
+  );
+}
+
+//Remove
+.button3 {
+  background-color: map.get(map.remove(newvars.$Rang, warning), primary);
+}
+
+//Each loop
+//1.	@each:
+//•	Loops through each key-value pair in the map newvars.$Rang.
+//•	$key represents the key, and $value represents the corresponding value.
+//2.	Conditional Check (@if):
+//•	Inside the loop, the code checks if the current key is warning.
+//•	If true, it sets the background-color property to the corresponding value.
+//3.	Dynamic Behavior:
+//•	You can dynamically apply different logic for each key-value pair in the map.
+.button2 {
+  @each $key, $value in newvars.$Rang {
+    @if $key == "primary" {
+      background-color: $value;
+      padding: 0.75rem;
+      color: #ffff;
+    }
+  }
+}

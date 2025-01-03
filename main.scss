@@ -1,0 +1,9 @@
+//Organize Imports Logically:
+//Import foundational styles (e.g., variables, mixins, functions) before components or specific styles.
+
+//variables and Function(mixins) (must come at Top)
+
+@use "./src/Card"; //order1
+@use "./src/variable"; //order2
+@use "./src/button.scss"; //order3
+@use "./src/Math";

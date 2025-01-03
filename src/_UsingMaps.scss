@@ -1,0 +1,51 @@
+//Sass file For mapping,each(Loop) and if-else use
+@use "sass:map";
+$Rang: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  danger: #e74c3c,
+);
+
+//Adding/Updating Map Entries
+//To add or update an entry in a map, use the map-merge function:
+//$colors: map-merge($colors, (warning: #f1c40f));
+// $Rang: map.merge($Rang, (warning: #f1c40f));
+
+$theme: (
+  light: (
+    background: #ffffff,
+    text: #000000,
+  ),
+  dark: (
+    background: #000000,
+    texts: #ffffff,
+  ),
+);
+
+//new variable assingmemt and thier value store from map
+$dark-background: map.get(map.get($theme, dark), background);
+$light-background: map.get(map.get($theme, light), background);
+$dark-color: map.get(map.get($theme, dark), texts);
+$light-color: map.get(map.get($theme, light), texts);
+
+//body.dark-mode is used to represent the body class dark-mode in Sass
+// body.dark-mode {
+//   background-color: $dark-background;
+//   color: #ffffff;
+// }
+
+body {
+  @each $mode, $value in $theme {
+    @if $mode == "dark" {
+      &.#{$mode} {
+        background-color: $dark-background;
+        color: $dark-color;
+      }
+    } @else if $mode == "light" {
+      &.#{$mode} {
+        background-color: $light-background;
+        color: $light-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "./variable" as vars;
+
+.button2 {
+  width: vars.$base-size * 10; // 32px
+  height: vars.$base-size + 5px; // 26px
+}
+
+.column {
+  border: vars.$base-border-thickness solid #0000;
+  padding: vars.$base-margin;
+  margin: vars.$base-margin 0px;
+  background-color: vars.$primary;
+  width: calc((#{vars.$container-width} - #{vars.$gutter}) / 12 * 100%);
+}
+.text {
+  line-height: vars.$base-font-size * vars.$line-height; // 24px
+}

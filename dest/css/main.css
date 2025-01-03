@@ -1,0 +1,72 @@
+.card {
+  display: block;
+  border: 2px solid #e40909;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.card .card-title {
+  font-size: 2;
+  font-weight: bold;
+}
+.card .card-body {
+  background-color: orange;
+  font-size: 2;
+}
+.card .card-body a {
+  text-decoration: underline;
+}
+
+body.light {
+  background-color: #ffffff;
+}
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.button {
+  margin-top: 0.75rem;
+  color: white;
+  background: rgb(218, 218, 239);
+  border: 2px solid rgb(165, 180, 171);
+}
+.button:hover {
+  background: darkblue;
+}
+.button.active {
+  color: rgb(221, 45, 5);
+}
+
+.button3 {
+  background-color: #e74c3c;
+}
+
+.button3 {
+  background-color: #f1c40f;
+}
+
+.button3 {
+  background-color: #3498db;
+}
+
+.button2 {
+  background-color: #3498db;
+  padding: 0.75rem;
+  color: white;
+}
+
+.button2 {
+  width: 70px;
+  height: 12px;
+}
+
+.column {
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 0.75rem;
+  margin: 0.75rem 0px;
+  background-color: #326dee;
+  width: calc((1200px - 20px) / 12 * 100%);
+}
+
+.text {
+  line-height: 4rem;
+}

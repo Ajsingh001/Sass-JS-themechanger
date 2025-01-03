@@ -1,0 +1,11 @@
+//To add a new class without removing existing ones:
+  // document.body.classList.add("new-class");
+
+  // To remove a specific class:
+  // document.body.classList.remove("old-class");
+
+  // if (document.body.classList.contains("specific-class")) {
+  //   console.log("Class exists!");
+  // } else {
+  //   console.log("Class does not exist.");
+  // }

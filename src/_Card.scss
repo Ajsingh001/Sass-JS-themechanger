@@ -1,0 +1,24 @@
+// main.scss or _Card.scss
+@use "./variable" as vars;
+
+
+
+.card {
+  display: block;
+  border: vars.$base-border-thickness solid #e40909; // Corrected border color
+  box-shadow: vars.$base-box-shadow;
+
+  .card-title {
+    font-size: vars.$base-font-size;
+    font-weight: bold;
+  }
+
+  .card-body {
+    background-color:vars.$error;
+    font-size: vars.$base-font-size;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
