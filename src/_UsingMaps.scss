@@ -11,6 +11,7 @@ $Rang: (
 //$colors: map-merge($colors, (warning: #f1c40f));
 // $Rang: map.merge($Rang, (warning: #f1c40f));
 
+//Nested map object in Sass
 $theme: (
   light: (
     background: #ffffff,
@@ -42,6 +43,8 @@ body {
         color: $dark-color;
       }
     } @else if $mode == "light" {
+      //#{$mode} THIS is the interpolation In Sass
+      //. (Dot) is used for class Name
       &.#{$mode} {
         background-color: $light-background;
         color: $light-color;
